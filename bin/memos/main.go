@@ -100,7 +100,8 @@ var (
 
 func init() {
 	viper.SetDefault("mode", "dev")
-	viper.SetDefault("driver", "sqlite")
+	viper.SetDefault("driver", "mysql")
+	viper.SetDefault("dsn", "root:root@tcp(127.0.0.1:3306)/memos_test?charset=utf8mb4&parseTime=True&loc=Local")
 	viper.SetDefault("port", 8081)
 
 	rootCmd.PersistentFlags().String("mode", "dev", `mode of server, can be "prod" or "dev" or "demo"`)
